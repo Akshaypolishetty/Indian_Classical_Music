@@ -62,7 +62,7 @@ def analyze_music(file_path):
     return tempo, avg_spectral_centroid
 
 if __name__ == "__main__":
-    file_path = r"C:\Users\Akshay\Downloads\download.wav"
+    file_path = r"FILE_PATH"
     
     # Get tempo and spectral centroid from the analysis
     tempo, spectral_centroid = analyze_music(file_path)
