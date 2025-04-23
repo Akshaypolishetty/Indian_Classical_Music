@@ -73,3 +73,17 @@ if __name__ == "__main__":
         print(f"The given music is classified as: {classification}")
     else:
         print("Error: Could not extract valid features from the audio.")
+
+# === STEP 5: BUILD THE CNN MODEL ===
+model = Sequential([
+    Conv2D(32, (3,3), activation='relu', input_shape=(X.shape[1], X.shape[2], 1)),
+    MaxPooling2D((2,2)),
+    Dropout(0.3),
+    Conv2D(64, (3,3), activation='relu'),
+    MaxPooling2D((2,2)),
+    Dropout(0.3),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dropout(0.3),
+    Dense(len(np.unique(y_encoded)), activation='softmax')
+])
